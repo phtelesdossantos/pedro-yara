@@ -1,0 +1,163 @@
+
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Pedro ❤️ Yara</title>
+
+<style>
+body{
+margin:0;
+font-family: Arial, sans-serif;
+background: linear-gradient(to bottom, #ff758c, #ff7eb3);
+color:white;
+text-align:center;
+overflow-x:hidden;
+}
+
+.hero{
+position:relative;
+height:100vh;
+background:url("foto1.jpg") center/cover no-repeat;
+display:flex;
+flex-direction:column;
+justify-content:center;
+align-items:center;
+}
+
+.overlay{
+position:absolute;
+top:0;
+left:0;
+width:100%;
+height:100%;
+background:rgba(0,0,0,0.4);
+}
+
+.hero-content{
+position:relative;
+z-index:2;
+}
+
+h1{
+font-size:40px;
+margin:0;
+}
+
+.subtitle{
+margin-top:10px;
+font-size:18px;
+}
+
+.counter{
+margin-top:15px;
+font-size:20px;
+font-weight:bold;
+}
+
+.gallery{
+padding:40px 20px;
+background:white;
+color:#333;
+}
+
+.gallery h2{
+color:#ff4e78;
+}
+
+.gallery img{
+width:90%;
+max-width:400px;
+margin:20px 0;
+border-radius:20px;
+box-shadow:0 10px 25px rgba(0,0,0,0.3);
+}
+
+.message{
+padding:40px 20px;
+font-size:18px;
+line-height:1.6;
+}
+
+.heart{
+position:fixed;
+top:-10px;
+color:#fff;
+animation:fall linear infinite;
+}
+
+@keyframes fall{
+to{ transform:translateY(100vh); }
+}
+</style>
+</head>
+
+<body>
+
+<audio autoplay loop>
+<source src="musica.mp3" type="audio/mpeg">
+</audio>
+
+<section class="hero">
+<div class="overlay"></div>
+<div class="hero-content">
+<h1>Pedro ❤️ Yara</h1>
+<div class="subtitle">
+Nos conhecemos em 10/12/2017 💕<br>
+Namorando desde 19/09/2019 💍
+</div>
+<div class="counter" id="contador"></div>
+</div>
+</section>
+
+<section class="gallery">
+<h2>Nossos Momentos ❤️</h2>
+<img src="foto2.jpg">
+<img src="foto3.jpg">
+<img src="foto4.jpg">
+</section>
+
+<section class="message">
+Yara,<br><br>
+Desde o dia que te conheci em 2017, algo mudou dentro de mim.
+Mas foi em 19/09/2019 que comecei a viver a melhor parte da minha vida.
+Você é minha paz, minha alegria e minha melhor escolha.
+Que Deus continue abençoando nossa história
+e que a gente construa uma vida inteira juntos. ❤️
+<br><br>
+Eu te amo para sempre.
+</section>
+
+<script>
+const inicio = new Date("2019-09-19T00:00:00");
+const contador = document.getElementById("contador");
+
+function atualizar(){
+const agora = new Date();
+const diff = agora - inicio;
+
+const dias = Math.floor(diff / (1000*60*60*24));
+const horas = Math.floor((diff / (1000*60*60)) % 24);
+const minutos = Math.floor((diff / (1000*60)) % 60);
+
+contador.innerHTML = `Estamos juntos há ${dias} dias, ${horas} horas e ${minutos} minutos ❤️`;
+}
+
+setInterval(atualizar,1000);
+atualizar();
+
+function criarCoracao(){
+const heart = document.createElement("div");
+heart.classList.add("heart");
+heart.innerHTML="❤️";
+heart.style.left=Math.random()*100+"vw";
+heart.style.animationDuration=(Math.random()*3+2)+"s";
+document.body.appendChild(heart);
+setTimeout(()=>heart.remove(),5000);
+}
+setInterval(criarCoracao,300);
+</script>
+
+</body>
+</html>
