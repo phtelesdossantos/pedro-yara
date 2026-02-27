@@ -1,0 +1,8 @@
+Coloque suas fotos como:
+foto1.jpg (foto principal)
+foto2.jpg
+foto3.jpg
+foto4.jpg
+
+Coloque sua música romântica como:
+musica.mp3
